@@ -9,3 +9,8 @@ This is a C project for parsing YAML files with libyaml. It includes testing wit
 ./valgrind # Runs valgrind on the parser
 ./parse test.yaml # Parses test.yaml file in /configs
 ```
+
+Requirements:
+- gcc
+- CMake
+- valgrind
