@@ -15,8 +15,16 @@ void test_parser(void) {
     TEST_ASSERT_EQUAL(1, i);
 }
 
+void test_parser_invalid_file(void) {
+    int i;
+    YamlMap map = {0};
+    i = parse("../configs/nonexistent.yaml", &map);
+    TEST_ASSERT_EQUAL(0, i);
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_parser);
+    RUN_TEST(test_parser_invalid_file);
     return UNITY_END();
 }
