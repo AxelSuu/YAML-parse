@@ -1,0 +1,3 @@
+config:
+  stage: test
+  script: echo "This is a test"
