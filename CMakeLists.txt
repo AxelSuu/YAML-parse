@@ -4,11 +4,15 @@ project(yaml_parser C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# Find libyaml via pkg-config
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(YAML REQUIRED yaml-0.1)
-
 include(FetchContent)
+
+FetchContent_Declare(
+    libyaml
+    GIT_REPOSITORY https://github.com/yaml/libyaml.git
+    GIT_TAG        0.2.5
+)
+FetchContent_MakeAvailable(libyaml)
+
 FetchContent_Declare(
     unity
     GIT_REPOSITORY https://github.com/ThrowTheSwitch/Unity.git
@@ -22,10 +26,9 @@ add_library(yaml_parser_lib
 )
 target_include_directories(yaml_parser_lib PUBLIC
     include
-    ${YAML_INCLUDE_DIRS}
 )
 target_link_libraries(yaml_parser_lib PUBLIC
-    ${YAML_LIBRARIES}
+    yaml
 )
 target_compile_options(yaml_parser_lib PRIVATE -Wall -Wextra -Werror)
 
