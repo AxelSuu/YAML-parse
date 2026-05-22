@@ -7,5 +7,5 @@ fi
 cd build
 cmake ..
 make
-valgrind ./yaml_parser configs/test.yaml
+valgrind ./yaml_parser ../configs/test.yaml
 ./test_parser
