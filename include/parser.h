@@ -6,7 +6,7 @@
 #define MAX_VAL_LEN 256
 
 typedef struct {
-    char key[MAX_KEY_LEN];   // dotted path, e.g. "config.stage"
+    char key[MAX_KEY_LEN];
     char value[MAX_VAL_LEN];
 } YamlEntry;
 
