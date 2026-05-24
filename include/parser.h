@@ -4,6 +4,7 @@
 #define MAX_ENTRIES 64
 #define MAX_KEY_LEN 256
 #define MAX_VAL_LEN 256
+#define MAX_DEPTH   16
 
 typedef struct {
     char key[MAX_KEY_LEN];
